@@ -3,30 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Título de mi Página Web</title>
+    <title>ALEJANDRA BARLA RIOBÓ — Official Online Store</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts (Playfair Display & Montserrat) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+    <!-- Configuración de Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Montserrat', 'sans-serif'],
+                    },
+                    colors: {
+                        zara: {
+                            black: '#000000',
+                            white: '#ffffff',
+                            gray: '#f4f4f4',
+                            darkgray: '#666666'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
     <style>
         body {
-            background-color: #ff69b4; /* Fondo rosa */
-            color: #ffffff;            /* Texto en blanco */
-            font-family: Arial, sans-serif; /* Tipografía limpia */
-            text-align: center;        /* Centrar el contenido para que se vea ordenado */
-            padding: 20px;
+            font-family: 'Montserrat', sans-serif;
+            background-color: #ffffff;
+            color: #000000;
         }
-        .video-container {
-            margin-top: 20px;
+
+        /* Transiciones suaves */
+        .sidebar-transition {
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .overlay-transition {
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        /* Ocultar barra de desplazamiento manteniendo funcionalidad */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
         }
     </style>
 </head>
-<body>
+<body class="relative antialiasing text-xs uppercase tracking-widest">
 
-    <h1>¡Hola, mundo!</h1>
-    <p>Este es el contenido visible de mi primera página web.</p>
-    <h2>Alejandra Barla Riobó</h2>
-
-    <!-- Sección del video de YouTube -->
-    <div class="video-container">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/XLPX-kX0AXc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <!-- BANNER NOTIFICACIÓN DE EDICIÓN LIMITADA -->
+    <div class="bg-black text-white text-[10px] text-center py-2 px-4 tracking-widest fixed top-0 left-0 w-full z-50">
+        NUEVA COLECCIÓN EDITORIAL 2026 — ENVÍOS GRATUITOS EN PEDIDOS SUPERIORES A 100€
     </div>
 
-</body>
-</html>
+    <!-- CABECERA PRINCIPAL (HEADER) -->
+    <header class="fixed top-8 left-0 w-full z-40 bg-white/90 backdrop-blur-md transition-all duration-300 border-b border-gray-100">
+        <div class="flex items-center justify-between px-6 py-5 md:px-12">
+            
+            <!-- Izquierda: Menú Hamburguesa & Buscar -->
+            <div class="flex items-center gap-6">
+                <button id="open-menu" class="flex items-center gap-2 hover:opacity-60 transition-opacity focus:outline-none">
+                    <svg class="w-5 h-5 stroke-current stroke-[1.2]" fill="none" viewBox="0 0 24 24">
+                        <path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round"/>
+                    </svg>
+                    <span class="hidden md:inline font-light text-[11px]">Menú</span>
+                </button>
+                
+                <button class="hidden md:flex items-center gap-2 hover:opacity-60 transition-opacity">
+                    <svg class="w-4 h-4 stroke-current stroke-[1.2]" fill="none" viewBox="0 0 24 24">
+                        <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                    </svg>
+                    <span class="font-light text-[11px]">Buscar</span>
+                </button>
+            </div>
+
+            <!-- Centro: LOGOTIPO OFICIAL -->
+            <div class="text-center">
+                <a href="#" class="font-serif text-xl sm:text-2xl md:text-3xl font-semibold tracking-tighter text-black uppercase block leading-none">
+                    Alejandra Barla Riobó
+                </a>
+                <span class="text-[9px] tracking-[0.3em] font-light text-gray-500 block mt-1">HAUTE COUTURE</span>
+            </div>
+
+            <!-- Derecha: Ayuda, Cuenta, Carrito -->
+            <div class="flex items-center gap-6">
+                <a href="#" class="hidden md:block font-light text-[1
+  
